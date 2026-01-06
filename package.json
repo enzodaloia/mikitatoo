@@ -1,0 +1,26 @@
+{
+  "name": "mikitatoo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "encore dev",
+    "dev-server": "encore dev --watch",
+    "build": "encore production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@symfony/webpack-encore": "^5.3.1",
+    "css-loader": "^7.1.2",
+    "postcss-loader": "^8.2.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
