@@ -1,14 +1,5 @@
 {
-  "build/app.css": "/build/app.css",
-  "build/app.js": "/build/app.js",
-  "build/runtime.js": "/build/runtime.js",
-  "build/images/themify.svg": "/build/images/themify.f0fc8c79.svg",
-  "build/images/et-line.svg": "/build/images/et-line.cb9f8089.svg",
-  "build/fonts/themify.eot": "/build/fonts/themify.9bad9444.eot",
-  "build/fonts/themify.ttf": "/build/fonts/themify.eda8b943.ttf",
-  "build/fonts/themify.woff": "/build/fonts/themify.29b39089.woff",
-  "build/fonts/et-line.woff": "/build/fonts/et-line.d59b2385.woff",
-  "build/fonts/et-line.eot": "/build/fonts/et-line.3f5eecf9.eot",
-  "build/fonts/et-line.ttf": "/build/fonts/et-line.cc7129c8.ttf",
-  "build/images/close.png": "/build/images/close.85efb107.png"
+  "build/app.css": "/build/app.31d6cfe0.css",
+  "build/app.js": "/build/app.2073ee12.js",
+  "build/runtime.js": "/build/runtime.bdea3a3c.js"
 }
