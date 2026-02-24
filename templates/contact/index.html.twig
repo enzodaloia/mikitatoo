@@ -1,0 +1,158 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+<!-- Header Banner -->
+<section class="banner-header full-height section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="img/slider/10.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 text-left caption mt-90">
+                <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="{{ path('app_index') }}">Home</a> / Contact</h5>
+                <h1 class="animate-box" data-animate-effect="fadeInUp">Contactez nous</h1>
+                <hr class="animate-box" data-animate-effect="fadeInUp">
+                <p class="animate-box" data-animate-effect="fadeInUp">Pour toute demande d’information sur nos prestations de tatouage ou de piercing, n’hésitez pas à nous contacter. Nous répondrons avec plaisir à vos questions et vous aiderai à concrétiser vos idées.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- hr -->
+<div class="line-vr-section"></div>
+<!-- Contact -->
+<section class="contact section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-30">
+                <h5>Ginko art tattoo</h5>
+                <p class="mb-30">
+                Bienvenue chez Artefact Tattoo Studio ! Nous créons des tatouages et piercings uniques, adaptés à vos envies et à votre style. Notre équipe passionnée vous accompagne de l’idée à la réalisation pour que chaque création soit une expérience mémorable.
+                </p>
+                <div class="item"> <span class="icon ti-location-pin"></span>
+                    <div class="cont">
+                        <h6>Adresse</h6>
+                        <p>37 Grande Rue, 01140 Thoissey</p>
+                    </div>
+                </div>
+                <div class="item"> <span class="icon ti-mobile"></span>
+                    <div class="cont">
+                        <h6>Téléphone</h6>
+                        <p><a href="tel:8551004444">06 50 32 43 68</a></p>
+                    </div>
+                </div>
+                <div class="item"> <span class="icon ti-email"></span>
+                    <div class="cont">
+                        <h6>e-Mail</h6>
+                        <p>mikitatouage@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 offset-md-1">
+                <h5>Formulaire de contact</h5>
+                <form method="post" class="contact__form" action="mail.php">
+                    <!-- Form message -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-success contact__msg" style="display: none" role="alert"> Your message was sent successfully. </div>
+                        </div>
+                    </div>
+                    <!-- Form elements -->
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <input name="name" type="text" placeholder="Nom *" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input name="email" type="email" placeholder="Email *" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input name="phone" type="text" placeholder="Téléphone *" required>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input name="subject" type="text" placeholder="Sujet *" required>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <textarea name="message" id="message" cols="30" rows="4" placeholder="Message *" required></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <input name="submit" type="submit" value="Envoyer le message">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Promo video - Testiominals -->
+<section class="testimonials video-wrapper video">
+    <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg" data-overlay-dark="3">
+        <div class="container">
+            <div class="row">
+                <!-- Promo video -->
+                <div class="col-md-7 mb-30">
+                    <div class="vid-area valign">
+                        <a class="vid" href="https://youtu.be/UCRNVgJJ97w"> <span class="icon"> <i class="ti-control-play"></i> </span> </a>
+                        <div class="cont">
+                            <h5>Promo Video</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testiominals -->
+                <div class="col-md-5 animate-box" data-animate-effect="fadeInUp">
+                    <div class="testimonials-box">
+                        <div class="owl-carousel owl-theme">
+                            <div class="item"> <span class="quote"><img src="img/quot.png" alt=""></span>
+                                <p class="v-border">Tattoo viverra tristique duis vitae dias the nesueten niva aestan ateuene artines duruna setlie suscena fermen uisque sed tellus man lorem nullaman the rana tortor in the felis fermen.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="img/team/1.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Jason Brown</h6> <span>Customer Review</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item"> <span class="quote">
+                                    <img src="img/quot.png" alt="">
+                                </span>
+                                <p class="v-border">Tattoo viverra tristique duis vitae dias the nesueten niva aestan ateuene artines duruna setlie suscena fermen uisque sed tellus man lorem nullaman the rana tortor in the felis fermen.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="img/team/2.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Emily White</h6> <span>Customer Review</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Clients -->
+<section class="clients">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+            <div class="owl-carousel owl-theme">
+                <div class="clients-logo">
+                    <a href="#0"><img src="img/clients/1.png" alt=""></a>
+                </div>
+                <div class="clients-logo">
+                    <a href="#0"><img src="img/clients/2.png" alt=""></a>
+                </div>
+                <div class="clients-logo">
+                    <a href="#0"><img src="img/clients/3.png" alt=""></a>
+                </div>
+                <div class="clients-logo">
+                    <a href="#0"><img src="img/clients/4.png" alt=""></a>
+                </div>
+                <div class="clients-logo">
+                    <a href="#0"><img src="img/clients/5.png" alt=""></a>
+                </div>
+                <div class="clients-logo">
+                    <a href="#0"><img src="img/clients/6.png" alt=""></a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

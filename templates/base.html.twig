@@ -13,7 +13,7 @@
             <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% endblock %}
 
-        {% block javascripts %}
+        {# {% block javascripts %}
             <!-- JS Plugins -->
             <script src="{{ asset('assets/js/jquery-3.6.3.min.js') }}"></script>
             <script src="{{ asset('assets/js/jquery-migrate-3.0.0.min.js') }}"></script>
@@ -29,9 +29,10 @@
             <script src="{{ asset('assets/js/select2.js') }}"></script>
             <script src="{{ asset('assets/js/datepicker.js') }}"></script>
             <script src="{{ asset('assets/js/custom.js') }}"></script>
-        {% endblock %}
+        {% endblock %} #}
     </head>
     <body>
+        {% if app.user %}
         <!-- Preloader -->
         <div class="preloader-bg"></div>
         <div id="preloader">
@@ -41,7 +42,7 @@
         </div>
         <!-- Smoke Preloader -->
         <div class="cd-transition-layer visible opening">
-            <div class="bg-layer"></div>
+            <div class="bg-layer" style="background-image: url('{{ asset('img/ink2.png') }}')"></div>
         </div>
         <!-- Cursor -->
         <div class="cursor js-cursor"></div>
@@ -63,11 +64,11 @@
                 <!-- Menu -->
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Pages <i class="ti-angle-down"></i></a>
+                        <li class="nav-item"><a class="nav-link" href="{{path('app_index')}}">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{path('app_prestation')}}">Prestation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{path('app_who')}}">Qui sommes-nous</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{path('app_team')}}">Notre Équipe</a></li>
+                        {# <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Pages <i class="ti-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="pricing.html" class="dropdown-item"><span>Pricing</span></a></li>
                                 <li><a href="team.html" class="dropdown-item"><span>Team</span></a></li>
@@ -83,14 +84,115 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </li> #}
+                        <li class="nav-item"><a class="nav-link" href="{{ path('app_process') }}">Process & soins</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('app_contact') }}">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        {% endif %}
 
         {% block body %}{% endblock %}
+        <!-- Footer -->
+        {% if app.user %}
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="footer-column footer-contact">
+                                <h3 class="footer-title">Adresse</h3>
+                                <p class="footer-contact-text">37 Grande Rue, 01140 Thoissey</p>
+                                <div class="footer-contact-info">
+                                    <p class="footer-contact-phone">06 50 32 43 68</p>
+                                    {# <p class="footer-contact-mail">info@tattoo.com</p> #}
+                                </div>
+                                <div class="footer-about-social-list"> <a href="#"><i class="ti-instagram"></i></a> <a href="#"><i class="ti-twitter"></i></a> <a href="#"><i class="ti-youtube"></i></a> <a href="#"><i class="ti-facebook"></i></a> <a href="#"><i class="ti-pinterest"></i></a> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 offset-md-1">
+                            <div class="item opening">
+                                <h3 class="footer-title">Horaires d'ouverture</h3>
+                                <ul>
+                                    <li>
+                                        <div class="tit">Lundi</div>
+                                        <div class="dots"></div> <span>09:00 - 18:00</span>
+                                    </li>
+                                    <li>
+                                        <div class="tit">Mardi</div>
+                                        <div class="dots"></div> <span>09:00 - 18:00</span>
+                                    </li>
+                                    <li>
+                                        <div class="tit">Mercredi</div>
+                                        <div class="dots"></div> <span>09:00 - 18:00</span>
+                                    </li>
+                                    <li>
+                                        <div class="tit">Jeudi</div>
+                                        <div class="dots"></div> <span>09:00 - 18:00</span>
+                                    </li>
+                                    <li>
+                                        <div class="tit">Vendredi</div>
+                                        <div class="dots"></div> <span>09:00 - 18:00</span>
+                                    </li>
+                                    <li>
+                                        <div class="tit">Samedi</div>
+                                        <div class="dots"></div> <span>09:00 - 18:00</span>
+                                    </li>
+                                    <li>
+                                        <div class="tit">Dimanche</div>
+                                        <div class="dots"></div> <span>Fermé</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        {# <div class="col-md-4 offset-md-1">
+                            <div class="footer-column footer-explore clearfix">
+                                <h3 class="footer-title">Subscribe</h3>
+                                <div class="row subscribe">
+                                    <div class="col-md-12">
+                                        <p>Subscribe to take advantage of our campaigns and gift certificates.</p>
+                                        <form>
+                                            <input type="text" name="search" placeholder="Your email" required>
+                                            <button>Subscribe</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> #}
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-bottom-inner">
+                                <p class="footer-bottom-copy-right">2026 © Tout droit reservé. Développé par <a href="#" target="_blank">Enzo D'aloia-D'ignazio</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {% endif %}
+    {% block javascripts %}
+        <!-- JS Plugins -->
+        <script src="{{ asset('assets/js/jquery-3.6.3.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery-migrate-3.0.0.min.js') }}"></script>
+        <script src="{{ asset('assets/js/modernizr-2.6.2.min.js') }}"></script>
+        <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/scrollIt.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.waypoints.min.js') }}"></script>
+        <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.stellar.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.magnific-popup.js') }}"></script>
+        <script src="{{ asset('assets/js/YouTubePopUp.js') }}"></script>
+        <script src="{{ asset('assets/js/select2.js') }}"></script>
+        <script src="{{ asset('assets/js/datepicker.js') }}"></script>
+        <script src="{{ asset('assets/js/custom.js') }}"></script>
+    {% endblock %}
     </body>
 </html>

@@ -528,7 +528,7 @@ blockquote cite:before {
     height: 100%;
     /* our sprite is composed of 25 frames */
     width: 2500%;
-    background: url("../assets/img/ink2.png") no-repeat 0 0;
+    background: url("/img/ink2.png") no-repeat 0 0;
     background-size: 100% 100%;
 }
 .cd-transition-layer.visible {
