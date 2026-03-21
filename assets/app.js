@@ -2,8 +2,8 @@
 
 // CSS
 import './styles/app.css';
-import './styles/style.css';
-import './styles/plugins.css';
+// import './styles/style.css';
+// import './styles/plugins.css';
 
 // JS
 import './js/jquery-3.6.3.min.js';

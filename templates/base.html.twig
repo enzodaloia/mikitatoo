@@ -32,7 +32,7 @@
         {% endblock %} #}
     </head>
     <body>
-        {% if app.user %}
+        {# {% if app.user %} #}
         <!-- Preloader -->
         <div class="preloader-bg"></div>
         <div id="preloader">
@@ -66,8 +66,8 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="{{path('app_index')}}">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{path('app_prestation')}}">Prestation</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{path('app_who')}}">Qui sommes-nous</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{path('app_team')}}">Notre Équipe</a></li>
+                        {# <li class="nav-item"><a class="nav-link" href="{{path('app_who')}}">Qui sommes-nous</a></li> #}
+                        <li class="nav-item"><a class="nav-link" href="{{path('app_portfolio')}}">Portfolio</a></li>
                         {# <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Pages <i class="ti-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="pricing.html" class="dropdown-item"><span>Pricing</span></a></li>
@@ -92,11 +92,11 @@
                 </div>
             </div>
         </nav>
-        {% endif %}
+        {# {% endif %} #}
 
         {% block body %}{% endblock %}
         <!-- Footer -->
-        {% if app.user %}
+        {# {% if app.user %} #}
         <footer class="footer">
             <div class="footer-top">
                 <div class="container">
@@ -109,7 +109,7 @@
                                     <p class="footer-contact-phone">06 50 32 43 68</p>
                                     {# <p class="footer-contact-mail">info@tattoo.com</p> #}
                                 </div>
-                                <div class="footer-about-social-list"> <a href="#"><i class="ti-instagram"></i></a> <a href="#"><i class="ti-twitter"></i></a> <a href="#"><i class="ti-youtube"></i></a> <a href="#"><i class="ti-facebook"></i></a> <a href="#"><i class="ti-pinterest"></i></a> </div>
+                                <div class="footer-about-social-list"> <a href="https://www.instagram.com/fusaindemiki/" target="_blank"><i class="ti-instagram"></i></a> <a href="https://www.facebook.com/MikiArtiste" target="_blank"><i class="ti-facebook"></i></a> </div>
                             </div>
                         </div>
                         <div class="col-md-6 offset-md-1">
@@ -176,7 +176,7 @@
                 </div>
             </div>
         </footer>
-        {% endif %}
+        {# {% endif %} #}
     {% block javascripts %}
         <!-- JS Plugins -->
         <script src="{{ asset('assets/js/jquery-3.6.3.min.js') }}"></script>

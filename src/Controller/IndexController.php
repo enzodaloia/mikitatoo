@@ -32,10 +32,10 @@ final class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('/equipe', name: 'app_team')]
+    #[Route('/portfolio', name: 'app_portfolio')]
     public function team(): Response
     {
-        return $this->render('index/team.html.twig', [
+        return $this->render('index/portfolio.html.twig', [
             'controller_name' => 'IndexController',
         ]);
     }
