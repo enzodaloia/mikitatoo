@@ -67,7 +67,14 @@
                         <li class="nav-item"><a class="nav-link" href="{{path('app_index')}}">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{path('app_prestation')}}">Prestation</a></li>
                         {# <li class="nav-item"><a class="nav-link" href="{{path('app_who')}}">Qui sommes-nous</a></li> #}
-                        <li class="nav-item"><a class="nav-link" href="{{path('app_portfolio')}}">Portfolio</a></li>
+                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Équipe <i class="ti-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="pricing.html" class="dropdown-item"><span>Miki</span></a></li>
+                                <li><a href="team.html" class="dropdown-item"><span>Jason</span></a></li>
+                                {# <li><a href="faqs.html" class="dropdown-item"><span>Faq</span></a></li> #}
+                            </ul>
+                        </li>
+                        {# <li class="nav-item"><a class="nav-link" href="{{path('app_portfolio')}}">Portfolio</a></li> #}
                         {# <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Pages <i class="ti-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="pricing.html" class="dropdown-item"><span>Pricing</span></a></li>
