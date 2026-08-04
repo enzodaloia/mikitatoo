@@ -48,7 +48,7 @@
             </div>
             <div class="col-md-5 offset-md-1">
                 <h5>Formulaire de contact</h5>
-                <form method="post" class="contact__form" action="mail.php">
+                <form method="post" action="{{ path('app_send_message') }}">
                     <!-- Form message -->
                     <div class="row">
                         <div class="col-12">
@@ -58,20 +58,34 @@
                     <!-- Form elements -->
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <input name="name" type="text" placeholder="Nom *" required>
+                            <input name="nom" type="text" placeholder="Nom *" value="{{ app.request.get('nom') }}" required>
                         </div>
+
                         <div class="col-md-6 form-group">
-                            <input name="email" type="email" placeholder="Email *" required>
+                            <input name="email" type="email" placeholder="Email *" value="{{ app.request.get('email') }}" required>
                         </div>
+
                         <div class="col-md-6 form-group">
-                            <input name="phone" type="text" placeholder="Téléphone *" required>
+                            <input name="telephone" type="text" placeholder="Téléphone *" value="{{ app.request.get('telephone') }}" required>
                         </div>
+
+                        <!-- Liste déroulante interlocuteur -->
                         <div class="col-md-12 form-group">
-                            <input name="subject" type="text" placeholder="Sujet *" required>
+                            <select name="interlocuteur" required>
+                                <option style="display:none;" value="">Choisir un interlocuteur *</option>
+                                <option value="Jason" {{ app.request.get('interlocuteur') == 'Jason' ? 'selected' : '' }}>Jason</option>
+                                <option value="Miki" {{ app.request.get('interlocuteur') == 'Miki' ? 'selected' : '' }}>Miki</option>
+                            </select>
                         </div>
+
                         <div class="col-md-12 form-group">
-                            <textarea name="message" id="message" cols="30" rows="4" placeholder="Message *" required></textarea>
+                            <input name="sujet" type="text" placeholder="Sujet *" value="{{ app.request.get('sujet') }}" required>
                         </div>
+
+                        <div class="col-md-12 form-group">
+                            <textarea name="message" id="message" cols="30" rows="4" placeholder="Message *" required>{{ app.request.get('message') }}</textarea>
+                        </div>
+
                         <div class="col-md-12">
                             <input name="submit" type="submit" value="Envoyer le message">
                         </div>
@@ -82,7 +96,7 @@
     </div>
 </section>
 <!-- Promo video - Testiominals -->
-<section class="testimonials video-wrapper video">
+{# <section class="testimonials video-wrapper video">
     <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg" data-overlay-dark="3">
         <div class="container">
             <div class="row">
@@ -125,9 +139,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> #}
 <!-- Clients -->
-<section class="clients">
+{# <section class="clients">
     <div class="container">
         <div class="row">
             <div class="col-md-7">
@@ -154,5 +168,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> #}
 {% endblock %}

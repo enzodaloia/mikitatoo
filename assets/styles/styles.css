@@ -3622,6 +3622,7 @@ display: inline-block;
     width: 100%;
     height: 550px;
 }
+
 .contact h5 {
     color: #fff;
     font-size: 27px;
@@ -3630,9 +3631,11 @@ display: inline-block;
     margin-bottom: 20px;
     letter-spacing: 3px;
 }
+
 .contact p {
     margin-bottom: 15px;
 }
+
 .contact p span {
     color: #fff;   
 }
@@ -3644,6 +3647,7 @@ display: inline-block;
     display: flex;
     margin-bottom: 20px;
 }
+
 .contact .item .icon {
     color: #904d30;
     margin-right: 15px;
@@ -3654,10 +3658,12 @@ display: inline-block;
     padding-top: 18px;
     border-radius: 100%;
 }
+
 .contact .item .icon:before {
     font-size: 24px;
     font-weight: 400;
 }
+
 .contact .item h6 {
     color: #fff;
     margin-bottom: 3px;
@@ -3666,9 +3672,59 @@ display: inline-block;
     letter-spacing: 3px;
     margin-top: 7px;
 }
+
 .contact .item p {
     font-size: 15px;
     margin-bottom: 0;
+}
+
+/* ======= Formulaire ======= */
+.contact input,
+.contact textarea,
+.contact select {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 15px;
+    border-radius: 0;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+/* Placeholder */
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Focus */
+.contact input:focus,
+.contact textarea:focus,
+.contact select:focus {
+    border-color: #904d30;
+}
+
+/* Select spécifique */
+.contact select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6 6 6-6' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 14px;
+    padding-right: 50px;
+}
+
+/* Options du select */
+.contact select option {
+    background: #1b1b1b;
+    color: #fff;
 }
 
 

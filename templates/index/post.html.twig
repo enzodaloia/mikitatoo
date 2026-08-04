@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ginko art tattoo{% endblock %}
+
+{% block body %}
+<!-- Header Banner -->
+<section class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="2" data-background="img/slider/1.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 text-left caption mt-90">
+                <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="index.html">Home</a> / News</h5>
+                <h1 class="animate-box" data-animate-effect="fadeInUp">Top Ten Tattoo Styles</h1>
+                <hr class="animate-box" data-animate-effect="fadeInUp">
+                <p class="animate-box" data-animate-effect="fadeInUp">Quisque pretium fermentum quam, sit amet cursus ante sollicitudin vel. Morbi consequat risus consequat, porttitor orci sit amet, iaculis nisl. Integer quis sapien nec elit ultrices euismod sit amet id lacus.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- hr -->
+<div class="line-vr-section"></div>
+<!-- Post -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-15">
+                <p class="mb-30">Quisque pretium fermentum quam, sit amet cursus ante sollicitudin vel. Morbi consequat risus consequat, porttitor orci sit amet, iaculis nisl. Integer quis sapien nec elit ultrices euismod sit amet id lacus. Sed a imperdiet erat. Duis eu est dignissim lacus dictum hendrerit quis vitae mi. Fusce eu nulla ac nisi cursus tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer tristique sem eget leo faucibus porttitor.</p> 
+                <img src="img/slider/2.jpg" class="mb-30" alt="">
+                <p>Nulla vitae metus tincidunt, varius nunc quis, porta nulla. Pellentesque vel dui nec libero auctor pretium id sed arcu. Nunc consequat diam id nisl blandit dignissim. Etiam commodo diam dolor, at scelerisque sem finibus sit amet. Curabitur id lectus eget purus finibus laoreet. Nam eget lectus ac sem luctus hendrerit sed nec magna. Maecenas vulputate magna sed nunc pellentesque, in consectetur nisi condimentum.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="img/news/1.jpg" class="mb-30" alt="">
+            </div>
+            <div class="col-md-6">
+                <img src="img/news/2.jpg" class="mb-30" alt="">
+            </div>
+        </div>
+        <div class="artefact-comment-section">
+            <div class="row">
+                <!-- Comment -->
+                <div class="col-md-6">
+                    <div class="artefact-post-comment-wrap">
+                        <div class="artefact-user-comment"> <img src="img/team/1.jpg" alt=""> </div>
+                        <div class="artefact-user-content">
+                            <h6>Robert Misse<span> 29 October 2025</span></h6>
+                            <p>Photography ultricies nibh non dolor maximus scee the inte molliser faubs neque nec tincidunte aliquam erat volutpat. Praeser tem malade. </p> <a class="artefact-repay" href="#">Reply<i class="ti-back-left"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div class="col-md-5 offset-md-1">
+                    <h6>Leave a Reply</h6>
+                    <form method="post" class="contact__form" action="mail.php">
+                        <!-- Form message -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="alert alert-success contact__msg" style="display: none" role="alert"> Your message was sent successfully. </div>
+                            </div>
+                        </div>
+                        <!-- Form elements -->
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <input name="name" type="text" placeholder="Full Name *" required>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input name="email" type="email" placeholder="Email Address *" required>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <textarea name="message" id="message" cols="30" rows="4" placeholder="Your Comment *" required></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <input name="submit" type="submit" value="Send Comment">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Prev-Next Post -->
+<section class="artefact-post-prev-next">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="artefact-post-prev-next-left">
+                        <a href="post.html"> <i class="ti-arrow-left"></i> Previous Post</a>
+                    </div> <a href="blog.html"><i class="ti-layout-grid3-alt"></i></a>
+                    <div class="artefact-post-prev-next-right"> <a href="post.html">Next Post <i class="ti-arrow-right"></i></a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

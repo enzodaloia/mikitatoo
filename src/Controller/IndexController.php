@@ -48,6 +48,36 @@ final class IndexController extends AbstractController
         ]);
     }
 
+    #[Route('/miki-kaneko', name: 'app_miki')]
+    public function miki(): Response
+    {
+        return $this->render('team/miki.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
+
+    #[Route('/jason-colle', name: 'app_jason')]
+    public function jason(): Response
+    {
+        return $this->render('team/jason.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
+
+    #[Route('/blog', name: 'app_blog')]
+    public function blog(): Response
+    {
+        return $this->render('index/blog.html.twig', [
+        ]);
+    }
+
+    #[Route('/post', name: 'app_post')]
+    public function post(): Response
+    {
+        return $this->render('index/post.html.twig', [
+        ]);
+    }
+
     #[Route('/coming-soon', name: 'app_coming_soon')]
     public function comingSoon(): Response
     {
