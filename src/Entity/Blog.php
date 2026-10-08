@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\BlogRepository;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\String\ByteString;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BlogRepository::class)]
@@ -25,6 +26,15 @@ class Blog
 
     #[ORM\Column]
     private ?\DateTime $createdAt = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $img = null;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+        $this->token = ByteString::fromRandom(255)->toString();
+    }
 
     public function getId(): ?int
     {
@@ -75,6 +85,18 @@ class Blog
     public function setCreatedAt(\DateTime $createdAt): static
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(?string $img): static
+    {
+        $this->img = $img;
 
         return $this;
     }

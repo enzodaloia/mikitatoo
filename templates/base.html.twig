@@ -2,15 +2,18 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <title>{% block title %}Ginko Body Art | Tatouage, Piercing & Beauté à Belleville-en-Beaujolais{% endblock %}</title>
+        <link rel="icon" type="image/png" href="{{ asset('img/logo/LOGO BLANC.png') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="{% block meta_description %}{% endblock %}">
-        <meta name="author" content="Ginko art tattoo">
+        <meta name="description" content="{% block meta_description %}Ginko Body Art à Thoissey : tatouage, piercing, massage, maquillage permanent et beauté. Découvrez Miki, Jason et Elsa et leurs univers.{% endblock %}">
+        <meta name="keywords" content="Ginko Body Art, Ginko Art Tattoo, tatouage Thoissey, tatoueur Thoissey, tatouage Beaujolais, tatoueur Beaujolais, tatouage Villefranche-sur-Saône, piercing Thoissey, piercing Beaujolais, massage Thoissey, maquillage permanent Thoissey, beauté Thoissey">
+        <meta name="author" content="Ginko Body Art">
+        <meta name="robots" content="index, follow">
         {% block stylesheets %}
             <!-- CSS Plugins et Styles -->
             <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
             <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
         {% endblock %}
 
         {# {% block javascripts %}
@@ -57,7 +60,7 @@
             <div class="container">
                 <!-- Logo -->
                 <div class="logo-wrapper">
-                    <a class="logo" href="{{path('app_index')}}"> <img src="{{ asset('img/logo-light.png') }}" class="logo-img" alt=""> </a>
+                    <a class="logo" href="{{path('app_index')}}"> <img src="{{ asset('img/logo/LOGO BLANC.png') }}" style="width: 250px" class="logo-img" alt=""> </a>
                 </div>
                 <!-- Button -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="ti-menu"></i></span> </button>
@@ -70,6 +73,7 @@
                         <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Équipe <i class="ti-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{path('app_miki')}}" class="dropdown-item"><span>Miki</span></a></li>
+                                <li><a href="{{path('app_elsa')}}" class="dropdown-item"><span>Elsa</span></a></li>
                                 <li><a href="{{path('app_jason')}}" class="dropdown-item"><span>Jason</span></a></li>
                                 {# <li><a href="faqs.html" class="dropdown-item"><span>Faq</span></a></li> #}
                             </ul>
@@ -111,9 +115,9 @@
                         <div class="col-md-5">
                             <div class="footer-column footer-contact">
                                 <h3 class="footer-title">Adresse</h3>
-                                <p class="footer-contact-text">37 Grande Rue, 01140 Thoissey</p>
+                                <p class="footer-contact-text">All. du Petit Prince, 69220 Belleville-en-Beaujolais</p>
                                 <div class="footer-contact-info">
-                                    <p class="footer-contact-phone">06 50 32 43 68</p>
+                                    <p class="footer-contact-phone">06 07 50 50 48</p>
                                     {# <p class="footer-contact-mail">info@tattoo.com</p> #}
                                 </div>
                                 <div class="footer-about-social-list"> <a href="https://www.instagram.com/fusaindemiki/" target="_blank"><i class="ti-instagram"></i></a> <a href="https://www.facebook.com/MikiArtiste" target="_blank"><i class="ti-facebook"></i></a> </div>

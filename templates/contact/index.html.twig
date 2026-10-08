@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Ginko art tattoo{% endblock %}
 
 {% block body %}
 <!-- Header Banner -->
@@ -19,32 +19,32 @@
 <!-- hr -->
 <div class="line-vr-section"></div>
 <!-- Contact -->
-<section class="contact section-padding">
+<section class="contact section-padding" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-30">
-                <h5>Ginko art tattoo</h5>
+                <h5>Ginko Body Art</h5>
                 <p class="mb-30">
-                Bienvenue chez Artefact Tattoo Studio ! Nous créons des tatouages et piercings uniques, adaptés à vos envies et à votre style. Notre équipe passionnée vous accompagne de l’idée à la réalisation pour que chaque création soit une expérience mémorable.
+                Bienvenue chez Ginko Body Art ! Un espace dédié au tatouage, au piercing, à la beauté et au bien-être. Notre équipe vous accompagne avec passion et savoir-faire pour créer une expérience personnalisée, dans une ambiance chaleureuse et bienveillante.
                 </p>
                 <div class="item"> <span class="icon ti-location-pin"></span>
                     <div class="cont">
                         <h6>Adresse</h6>
-                        <p>37 Grande Rue, 01140 Thoissey</p>
+                        <p>All. du Petit Prince, 69220 Belleville-en-Beaujolais</p>
                     </div>
                 </div>
                 <div class="item"> <span class="icon ti-mobile"></span>
                     <div class="cont">
                         <h6>Téléphone</h6>
-                        <p><a href="tel:8551004444">06 50 32 43 68</a></p>
+                        <p><a href="tel:0607505048">06 07 50 50 48</a></p>
                     </div>
                 </div>
-                <div class="item"> <span class="icon ti-email"></span>
+                {# <div class="item"> <span class="icon ti-email"></span>
                     <div class="cont">
                         <h6>e-Mail</h6>
                         <p>mikitatouage@gmail.com</p>
                     </div>
-                </div>
+                </div> #}
             </div>
             <div class="col-md-5 offset-md-1">
                 <h5>Formulaire de contact</h5>
@@ -73,8 +73,9 @@
                         <div class="col-md-12 form-group">
                             <select name="interlocuteur" required>
                                 <option style="display:none;" value="">Choisir un interlocuteur *</option>
-                                <option value="Jason" {{ app.request.get('interlocuteur') == 'Jason' ? 'selected' : '' }}>Jason</option>
-                                <option value="Miki" {{ app.request.get('interlocuteur') == 'Miki' ? 'selected' : '' }}>Miki</option>
+                                <option value="Miki" {{ app.request.get('interlocuteur') == 'Miki' ? 'selected' : '' }}>Miki - Artiste Tatoueuse</option>
+                                <option value="Elsa" {{ app.request.get('interlocuteur') == 'Elsa' ? 'selected' : '' }}>Elsa - Artiste & Praticienne beauté</option>
+                                <option value="Jason" {{ app.request.get('interlocuteur') == 'Jason' ? 'selected' : '' }}>Jason - Artiste Tatoueur</option>
                             </select>
                         </div>
 

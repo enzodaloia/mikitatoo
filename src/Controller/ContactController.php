@@ -49,6 +49,8 @@ final class ContactController extends AbstractController
         $interlocuteur = $request->request->get('interlocuteur');
         if($interlocuteur == 'Jason'){
             $interlocuteur = "colle_jason@outlook.com";
+        }elseif($interlocuteur == 'Elsa'){
+            $interlocuteur = "elsa.combes980@gmail.com";
         }else{
             $interlocuteur = "mikitatouage@gmail.com";
         }

@@ -3,6 +3,20 @@
 {% block title %}Ginko art tattoo{% endblock %}
 
 {% block body %}
+<style>
+    .post-img img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+        display: block;
+    }
+
+    @media (max-width: 767px) {
+        .post-img img {
+            height: 220px;
+        }
+    }
+</style>
 <!-- Header Banner -->
 <section class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="2" data-background="img/slider/1.jpg">
     <div class="container">
@@ -19,24 +33,47 @@
 <!-- hr -->
 <div class="line-vr-section"></div>
 <!-- Blog -->
+
 <section class="blog2 section-padding bg-blck">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="item">
-                            <div class="post-img">
-                                <a href="post.html"> <img src="img/news/1.jpg" alt=""> </a>
-                                <div class="date">
-                                    <a href="post.html"> <span>Dec</span> <i>29</i> </a>
+                        {% for b in blog %}
+                            <div class="item">
+                                <div class="post-img">
+                                    <a href="{{ path('app_blog_show', {'id': b.id}) }}">
+                                        <img src="{{ asset('uploads/blog/' ~ b.img) }}" alt="{{ b.title }}">
+                                    </a>
+
+                                    <div class="date">
+                                        <a href="{{ path('app_blog_show', {'id': b.id}) }}">
+                                            <span>{{ b.createdAt|date('M') }}</span>
+                                            <i>{{ b.createdAt|date('d') }}</i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="post-cont">
+                                    <a href="{{ path('app_blog_index') }}">
+                                        <span class="tag">Blog</span>
+                                    </a>
+
+                                    <h5>
+                                        <a href="{{ path('app_blog_show', {'id': b.id}) }}">
+                                            {{ b.title }}
+                                        </a>
+                                    </h5>
+
+                                    <p>{{ b.content }}</p>
+
+                                    <a href="{{ path('app_blog_show', {'id': b.id}) }}" class="btn-curve btn-1">
+                                        <span>Lire l'article</span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="post-cont"> <a href="blog.html"><span class="tag">Blog</span></a>
-                                <h5><a href="post.html">Top Ten Tattoo Styles</a></h5>
-                                <p>Lorem ipsum potenti fringilla pretium ipsum non blandit. Vivamus eget nisi non mi iaculis iaculis imperie quiseros sevin elentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis enesta mauris suscipit mis nec est aliquam, a tincidunt eros iacu suscipit risus eu ullamcoren.</p> <a href="post.html" class="btn-curve btn-1"><span>Read More</span></a>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                     <div class="col-md-12">
                         <!-- Pagination -->

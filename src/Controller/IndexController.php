@@ -4,15 +4,18 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\Blog;
+use App\Repository\BlogRepository;
 use Symfony\Component\Routing\Attribute\Route;
 
 final class IndexController extends AbstractController
 {
     #[Route('/', name: 'app_index')]
-    public function index(): Response
+    public function index(BlogRepository $blogRepository): Response
     {
         return $this->render('index/index.html.twig', [
-            'controller_name' => 'IndexController',
+            'blogs' => $blogRepository->findBy([], ['createdAt' => 'DESC'], 4),
         ]);
     }
 
@@ -48,7 +51,7 @@ final class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('/miki-kaneko', name: 'app_miki')]
+    #[Route('/Miki-Kaneko', name: 'app_miki')]
     public function miki(): Response
     {
         return $this->render('team/miki.html.twig', [
@@ -56,7 +59,15 @@ final class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('/jason-colle', name: 'app_jason')]
+    #[Route('/Elsa_Combes', name: 'app_elsa')]
+    public function elsa(): Response
+    {
+        return $this->render('team/elsa.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
+
+    #[Route('/Jason-Colle', name: 'app_jason')]
     public function jason(): Response
     {
         return $this->render('team/jason.html.twig', [
@@ -65,9 +76,11 @@ final class IndexController extends AbstractController
     }
 
     #[Route('/blog', name: 'app_blog')]
-    public function blog(): Response
+    public function blog(EntityManagerInterface $entityManager): Response
     {
+        $blog = $entityManager->getRepository(Blog::class)->findAll();
         return $this->render('index/blog.html.twig', [
+            'blog'=>$blog,
         ]);
     }
 
