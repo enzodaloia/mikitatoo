@@ -1,0 +1,212 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ginko art tattoo{% endblock %}
+
+{% block body %}
+<section class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="2" data-background="{{ asset('img/site/elsa-fond.jpg') }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 caption mt-90">
+                <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="{{ path('app_index') }}">Accueil</a> / Équipe</h5>
+                <h1 class="animate-box" data-animate-effect="fadeInUp">Elsa Combes</h1>
+                {# <hr class="animate-box" data-animate-effect="fadeInUp"> #}
+                {# <p class="animate-box" data-animate-effect="fadeInUp">Lorem arena nuam enim mi obortis esen the uctus accumsan golden isuame amen auctor orci done vitae vehicula risus duise nun sapien asuam.</p> #}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- hr -->
+<div class="line-vr-section"></div>
+<!-- Team -->
+<section class="team section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-60">
+                <div class="item right">
+                    <figure><img src="{{ asset('img/site/elsa-massage.jpg') }}" alt="Elsa" class="img-fluid"></figure>
+                    <div class="caption padding-left">
+                        <div class="name">Elsa Combes</div>
+                        <div class="subname">Esthéticienne</div>
+                        <p>Passionnée par la beauté, le bien-être et l’expression de soi depuis plus de 10 ans, j’aime avant tout prendre soin des autres.
+                        Esthéticienne de formation, j’ai choisi de réunir dans mon univers différentes prestations autour de la beauté, du bien-être et de la mise en valeur de soi.</p>
+                        <p class="mb-0"><span class="white">Email :</span> <a href="mailto:elsa.combes980@gmail.com">elsa.combes980@gmail.com</a></p>
+                        <p><span class="white">Téléphone :</span> <a href="tel:0607505048">06.07.50.50.48</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>A propos de moi</h2>
+                <p>Passionnée par la beauté, le bien-être et l’expression de soi depuis plus de 10 ans, j’aime avant tout prendre soin des autres.
+                Esthéticienne de formation, j’ai choisi de réunir dans mon univers différentes prestations autour de la beauté, du bien-être et de la mise en valeur de soi.
+                Chaque prestation est réalisée avec écoute, attention et précision, en m’adaptant aux envies et aux besoins de chacun.
+                Mon objectif : vous offrir un résultat personnalisé et un véritable moment pour vous, dans une ambiance chaleureuse et apaisante.
+                </p>
+            </div>
+            <div class="col-md-12 mt-30 animate-box" data-animate-effect="fadeInRight">
+                <div class="accrodion-grp" data-grp-name="process-faq-one-accrodion">
+                    <h2>Mes prestations</h2>
+                    <div class="accrodion active">
+                        <div class="accrodion-title">
+                            <h4><span>1.</span> Maquillage permanent</h4>
+                        </div>
+                        <div class="accrodion-content">
+                            <div class="inner">
+                                <p>
+                                    Le maquillage permanent permet de mettre naturellement en valeur les traits du visage et de simplifier le quotidien.
+                                    Sourcils, lèvres… chaque prestation est pensée en fonction de votre visage, de votre carnation et de votre style.
+                                    Je recherche avant tout un résultat harmonieux, élégant et naturel, qui vous ressemble.
+                                    Chaque étape est réalisée avec précision, dans le respect des règles d’hygiène, pour vous accompagner sereinement dans votre projet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accrodion">
+                        <div class="accrodion-title">
+                            <h4><span>2.</span> Piercing</h4>
+                        </div>
+                        <div class="accrodion-content">
+                            <div class="inner">
+                                <p>
+                                    Le piercing est une façon d’affirmer son style, sa personnalité ou simplement de se faire plaisir.
+                                    Je vous accompagne dans le choix du bijou et de son emplacement afin de créer un piercing adapté à votre morphologie et à vos envies.
+                                    Chaque réalisation est effectuée avec soin, avec du matériel adapté et dans le respect des règles d’hygiène.
+                                    Du choix du bijou aux conseils de cicatrisation, je vous accompagne pour une expérience rassurante et personnalisée.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accrodion">
+                        <div class="accrodion-title">
+                            <h4><span>3.</span> Massages bien-être</h4>
+                        </div>
+                        <div class="accrodion-content">
+                            <div class="inner">
+                                <p>
+                                    Accordez-vous une véritable pause grâce à des massages pensés pour favoriser la détente et le lâcher-prise.
+                                    Suédois, lomi lomi, balinais, californien, deep tissue, réflexologie plantaire, ayurvédique ou sur-mesure : choisissez l’approche qui vous correspond.
+                                    Les techniques et la pression sont adaptées à vos besoins et à vos préférences.
+                                    Un moment pour relâcher les tensions, ralentir et prendre soin de vous, dans une ambiance douce, chaleureuse et apaisante.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Latest Work Gallery -->
+{# TODO : remplacer par les vraies photos d'Elsa pour chaque prestation #}
+{% set realisations = {
+    'Maquillage permanent': ['img/services/1.jpg', 'img/services/2.jpg', 'img/services/3.jpg', 'img/services/4.jpg'],
+    'Piercing': ['img/services/1.jpg', 'img/services/2.jpg', 'img/services/3.jpg', 'img/services/4.jpg'],
+    'Massages bien-être': ['img/services/1.jpg', 'img/services/2.jpg', 'img/services/3.jpg', 'img/services/4.jpg'],
+} %}
+<section class="gallery section-padding bg-blck">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Mes dernières réalisations</h2>
+            </div>
+        </div>
+        {% for prestation, images in realisations %}
+        <div class="row{{ not loop.last ? ' mb-60' }}">
+            <div class="col-md-12">
+                <h4>{{ prestation }}</h4>
+            </div>
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme">
+                    {% for image in images %}
+                    <div class="gallery-item">
+                        <a href="{{ asset(image) }}" title="{{ prestation }}" class="img-zoom">
+                            <div class="gallery-box">
+                                <div class="gallery-img"> <img src="{{ asset(image) }}" class="img-fluid mx-auto d-block" alt="{{ prestation }}"> </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- Promo video - Testiominals -->
+{# <section class="testimonials video-wrapper video">
+    <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg" data-overlay-dark="3">
+        <div class="container">
+            <div class="row">
+                <!-- Promo video -->
+                <div class="col-md-7 mb-30">
+                    <div class="vid-area valign">
+                        <a class="vid" href="https://youtu.be/UCRNVgJJ97w"> <span class="icon"> <i class="ti-control-play"></i> </span> </a>
+                        <div class="cont">
+                            <h5>Promo Video</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testiominals -->
+                <div class="col-md-5 animate-box" data-animate-effect="fadeInUp">
+                    <div class="testimonials-box">
+                        <div class="owl-carousel owl-theme">
+                            <div class="item"> <span class="quote"><img src="img/quot.png" alt=""></span>
+                                <p class="v-border">Tattoo viverra tristique duis vitae dias the nesueten niva aestan ateuene artines duruna setlie suscena fermen uisque sed tellus man lorem nullaman the rana tortor in the felis fermen.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="img/team/1.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Jason Brown</h6> <span>Customer Review</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item"> <span class="quote">
+                                    <img src="img/quot.png" alt="">
+                                </span>
+                                <p class="v-border">Tattoo viverra tristique duis vitae dias the nesueten niva aestan ateuene artines duruna setlie suscena fermen uisque sed tellus man lorem nullaman the rana tortor in the felis fermen.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="img/team/2.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Emily White</h6> <span>Customer Review</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> #}
+<!-- Clients -->
+{# <section class="clients">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="owl-carousel owl-theme">
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/1.png" alt=""></a>
+                    </div>
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/2.png" alt=""></a>
+                    </div>
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/3.png" alt=""></a>
+                    </div>
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/4.png" alt=""></a>
+                    </div>
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/5.png" alt=""></a>
+                    </div>
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/6.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> #}
+{% endblock %}

@@ -1,0 +1,190 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ginko art tattoo{% endblock %}
+
+{% block body %}
+<section class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="2" data-background="img/slider/1.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 caption mt-90">
+                <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="{{ path('app_index') }}">Accueil</a> / Équipe</h5>
+                <h1 class="animate-box" data-animate-effect="fadeInUp">Jason Colle</h1>
+                {# <hr class="animate-box" data-animate-effect="fadeInUp"> #}
+                {# <p class="animate-box" data-animate-effect="fadeInUp">Lorem arena nuam enim mi obortis esen the uctus accumsan golden isuame amen auctor orci done vitae vehicula risus duise nun sapien asuam.</p> #}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- hr -->
+<div class="line-vr-section"></div>
+<!-- Team -->
+<section class="team section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-60">
+                <div class="item right">
+                    <figure><img src="{{ asset('img/jason.jpg') }}" alt="" class="img-fluid"></figure>
+                    <div class="caption padding-left">
+                        <div class="name">Jason Colle</div>
+                        <div class="subname">Artiste Tatoueur</div>
+                        <p>Tatoueur spécialisé dans les tatouages fine-line, sketch et micro-réalisme. Plutôt centré sur les tatouages en noir & blanc/gris.</p>
+                        <p class="mb-0"><span class="white">Email :</span> <a href="mailto:colle_jason@outlook.com">colle_jason@outlook.com</a></p>
+                        <p><span class="white">Téléphone :</span> <a href="tel:0672964907">06.72.96.49.07</a></p>
+                        <div class="social-list"> <a href="https://www.instagram.com/jason.tx3/"><i class="ti-instagram"></i></a> <a href="https://www.tiktok.com/@jason.tx3"><i class="fa-brands fa-tiktok"></i></a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>A propos de moi</h2>
+                <p>Passionné de dessin depuis mon plus jeune âge, j'ai d'abords décidé de m'orienté dans le monde du graphisme pendant les 2 premières années de mon activité. Par la suite j'ai évolué en tant qu'artiste en parallèle du graphisme, ce qui m'a mené petit à petit à entrer dans le monde du tatouage via ma collègue Miki qui m'a prise sous son aile. Je suis donc artiste/tatoueur à plein temps aujourd'hui.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Latest Work Gallery -->
+<section class="gallery section-padding bg-blck">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Mes dernières réalisations</h2>
+            </div>
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme">
+                    <div class="gallery-item">
+                        <a href="img/services/1.jpg" title="" class="img-zoom">
+                            <div class="gallery-box">
+                                <div class="gallery-img"> <img src="img/services/1.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="img/services/2.jpg" title="" class="img-zoom">
+                            <div class="gallery-box">
+                                <div class="gallery-img"> <img src="img/services/2.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="img/services/3.jpg" title="" class="img-zoom">
+                            <div class="gallery-box">
+                                <div class="gallery-img"> <img src="img/services/3.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="img/services/4.jpg" title="" class="img-zoom">
+                            <div class="gallery-box">
+                                <div class="gallery-img"> <img src="img/services/4.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="img/services/1.jpg" title="" class="img-zoom">
+                            <div class="gallery-box">
+                                <div class="gallery-img"> <img src="img/services/1.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="img/services/2.jpg" title="" class="img-zoom">
+                            <div class="gallery-box">
+                                <div class="gallery-img"> <img src="img/services/2.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="img/services/3.jpg" title="" class="img-zoom">
+                            <div class="gallery-box">
+                                <div class="gallery-img"> <img src="img/services/3.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="img/services/4.jpg" title="" class="img-zoom">
+                            <div class="gallery-box">
+                                <div class="gallery-img"> <img src="img/services/4.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Promo video - Testiominals -->
+{# <section class="testimonials video-wrapper video">
+    <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg" data-overlay-dark="3">
+        <div class="container">
+            <div class="row">
+                <!-- Promo video -->
+                <div class="col-md-7 mb-30">
+                    <div class="vid-area valign">
+                        <a class="vid" href="https://youtu.be/UCRNVgJJ97w"> <span class="icon"> <i class="ti-control-play"></i> </span> </a>
+                        <div class="cont">
+                            <h5>Promo Video</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testiominals -->
+                <div class="col-md-5 animate-box" data-animate-effect="fadeInUp">
+                    <div class="testimonials-box">
+                        <div class="owl-carousel owl-theme">
+                            <div class="item"> <span class="quote"><img src="img/quot.png" alt=""></span>
+                                <p class="v-border">Tattoo viverra tristique duis vitae dias the nesueten niva aestan ateuene artines duruna setlie suscena fermen uisque sed tellus man lorem nullaman the rana tortor in the felis fermen.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="img/team/1.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Jason Brown</h6> <span>Customer Review</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item"> <span class="quote">
+                                    <img src="img/quot.png" alt="">
+                                </span>
+                                <p class="v-border">Tattoo viverra tristique duis vitae dias the nesueten niva aestan ateuene artines duruna setlie suscena fermen uisque sed tellus man lorem nullaman the rana tortor in the felis fermen.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="img/team/2.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Emily White</h6> <span>Customer Review</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> #}
+<!-- Clients -->
+{# <section class="clients">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="owl-carousel owl-theme">
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/1.png" alt=""></a>
+                    </div>
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/2.png" alt=""></a>
+                    </div>
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/3.png" alt=""></a>
+                    </div>
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/4.png" alt=""></a>
+                    </div>
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/5.png" alt=""></a>
+                    </div>
+                    <div class="clients-logo">
+                        <a href="#0"><img src="img/clients/6.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> #}
+{% endblock %}

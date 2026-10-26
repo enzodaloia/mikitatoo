@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un article{% endblock %}
+
+{% block body %}
+
+<section class="section-padding bg-blck blog-create-section">
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-7">
+
+            <div class="mb-4">
+                <h4>Nouvel article</h4>
+                <p class="mb-0">
+                    Renseignez les informations de votre article.
+                </p>
+            </div>
+
+            <div class="blog-form">
+                {{ include('blog/_form.html.twig') }}
+            </div>
+
+            <div class="mt-4">
+                <a href="{{ path('app_blog_index') }}" class="btn-curve btn-1">
+                    <span>Retour aux articles</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<style>
+    .blog-create-section {
+        padding-top: clamp(70px, 10vw, 120px);
+        padding-bottom: clamp(40px, 6vw, 70px);
+    }
+
+    @media (max-width: 767px) {
+        .blog-create-section {
+            padding-top: 60px;
+        }
+
+        .blog-create-section .btn-curve {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+
+{% endblock %}
