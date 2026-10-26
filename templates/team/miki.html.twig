@@ -3,14 +3,14 @@
 {% block title %}Ginko art tattoo{% endblock %}
 
 {% block body %}
-<section class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="2" data-background="img/slider/1.jpg">
+<section class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="2" data-background="{{ asset('img/site/miki-fond.jpg') }}">
     <div class="container">
         <div class="row">
             <div class="col-md-6 caption mt-90">
-                <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="index.html">Home</a> / Team</h5>
+                <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="{{ path('app_index') }}">Accueil</a> / Équipe</h5>
                 <h1 class="animate-box" data-animate-effect="fadeInUp">Miki Kaneko</h1>
                 <hr class="animate-box" data-animate-effect="fadeInUp">
-                <p class="animate-box" data-animate-effect="fadeInUp">Lorem arena nuam enim mi obortis esen the uctus accumsan golden isuame amen auctor orci done vitae vehicula risus duise nun sapien asuam.</p>
+                <p class="animate-box" data-animate-effect="fadeInUp">Artiste peintre et tatoueuse, je crée des tatouages uniques d’inspiration japonaise, pensés comme de véritables œuvres sur la peau.</p>
             </div>
         </div>
     </div>
@@ -23,36 +23,48 @@
         <div class="row">
             <div class="col-md-12 mb-60">
                 <div class="item right">
-                    <figure><img src="{{ asset('img/team/mikiabout.jpeg') }}" style="width:500px" alt="" class="img-fluid"></figure>
+                    <figure><img src="{{ asset('img/team/mikiabout.jpeg') }}" style="width:500px" alt="Miki Kaneko" class="img-fluid"></figure>
                     <div class="caption padding-left">
                         <div class="name">Miki Kaneko</div>
-                        <div class="subname">Tattoo Artist</div>
-                        <p>Tattoo aliquet miss orci elit gene on tristique in the dream vitaen aliuam lorem tincidunt felis sed gravida aliquam the neque miss blue hendren mavition duru sapien mana amenta the mollis.</p>
-                        <p class="mb-0"><span class="white">Email:</span> <a href="mailto:mikikaneko@gmail.com">mikikaneko@gmail.com</a></p>
-                        <p><span class="white">Phone:</span> <a href="tel:0650324368">06.50.32.43.68</a></p>
-                        <div class="social-list"> <a href="#"><i class="ti-instagram"></i></a> <a href="#"><i class="ti-twitter"></i></a> <a href="#"><i class="ti-youtube"></i></a> <a href="#"><i class="ti-facebook"></i></a> <a href="#"><i class="ti-pinterest"></i></a> </div>
+                        <div class="subname">Artiste Tatoueuse</div>
+                        <p>Illustratrice et peintre depuis plus de 20 ans, j’ai choisi en 2020 de mettre mon univers artistique au service du tatouage.
+                        Réaliste, japonais ou néo-japonais : chaque projet est une pièce unique, dessinée sur mesure.</p>
+                        <p class="mb-0"><span class="white">Email :</span> <a href="mailto:mikitatouage@gmail.com">mikitatouage@gmail.com</a></p>
+                        <p><span class="white">Téléphone :</span> <a href="tel:0650324368">06.50.32.43.68</a></p>
+                        <div class="social-list"> <a href="https://www.instagram.com/fusaindemiki/" target="_blank"><i class="ti-instagram"></i></a> <a href="https://www.facebook.com/MikiArtiste" target="_blank"><i class="ti-facebook"></i></a> </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h2>About Me</h2>
-                <p>Lorem vavida haretra nuam enim mi obortis eset uctus enec accumsan eu justo alisuame amet auctor orci donec vitae vehicula risus duise sapien accumsan nemauris ullamcorper rutrum asiquam congue nie auctor. Lorem nuam enim mi obortis eset uctus enec accumsan golden alisuame amet auctor orci donec vitae vehicula riduse nunsapien accumsan id mauris ullamcorper rutrum asiquam aucto vavida haretra nuam enim accumsan.</p>
+                <h2>À propos de moi</h2>
+                <p>Artiste illustratrice et peintre depuis plus de 20 ans, j’ai longtemps travaillé entre l’illustration, la peinture et la communication.
+                Naturellement sollicitée pour transposer mes créations sur la peau, je me suis formée au tatouage en 2020 auprès de plusieurs tatoueurs expérimentés à Lyon.
+                Aujourd’hui, je propose des tatouages artistiques d’inspiration japonaise, où l’on retrouve la sensibilité de ma peinture.</p>
+                <p>Mes tatouages « effet peinture » rappellent la texture d’une toile : chaque pièce est imaginée avec vous, à partir de votre histoire et de vos envies,
+                pour devenir une œuvre unique. Je travaille en noir et gris comme en couleur, à la machine ou en handpoke, notamment pour les mains.</p>
                 <ul class="about-list list-unstyled">
                     <li>
                         <div class="about-list-icon"> <span class="ti-check"></span> </div>
                         <div class="about-list-text">
-                            <p>I'm a professional and certified tattoo.</p>
+                            <p>Styles réaliste, japonais et néo-japonais : nature, fleurs, animaux, motifs graphiques…</p>
                         </div>
                     </li>
                     <li>
                         <div class="about-list-icon"> <span class="ti-check"></span> </div>
                         <div class="about-list-text">
-                            <p>I care about the satisfaction of my customers.</p>
+                            <p>Des créations uniques et sur mesure, dessinées pour chaque projet</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="about-list-icon"> <span class="ti-check"></span> </div>
+                        <div class="about-list-text">
+                            <p>Matériel stérile et à usage unique, dans le respect strict des normes d’hygiène</p>
                         </div>
                     </li>
                 </ul>
+                <a href="{{ path('app_contact') }}?interlocuteur=Miki#contact" class="btn-curve btn-1 mt-30"><span>Me contacter pour un projet</span></a>
             </div>
         </div>
     </div>
@@ -62,7 +74,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Latest Works</h2>
+                <h2>Mes dernières réalisations</h2>
             </div>
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme">
@@ -128,7 +140,7 @@
     </div>
 </section>
 <!-- Promo video - Testiominals -->
-<section class="testimonials video-wrapper video">
+{# <section class="testimonials video-wrapper video">
     <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg" data-overlay-dark="3">
         <div class="container">
             <div class="row">
@@ -171,9 +183,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> #}
 <!-- Clients -->
-<section class="clients">
+{# <section class="clients">
     <div class="container">
         <div class="row">
             <div class="col-md-7">
@@ -200,5 +212,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> #}
 {% endblock %}

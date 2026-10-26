@@ -1,0 +1,293 @@
+/* ======= Page Soins ======= */
+.soins-hint {
+    margin-top: 10px;
+}
+
+/* Onglets */
+.soins-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+.soins-tab {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #1b1b1b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    padding: 12px 26px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.soins-tab i {
+    color: #904d30;
+    margin-right: 8px;
+    transition: color 0.3s ease;
+}
+.soins-tab:hover {
+    border-color: #904d30;
+}
+.soins-tab.active {
+    background: #904d30;
+    border-color: #904d30;
+}
+.soins-tab.active i {
+    color: #fff;
+}
+
+/* Photo */
+.soins-photo {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 100%;
+    min-height: 380px;
+}
+.soins-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    transition: transform 0.8s ease;
+}
+.soins-photo:hover img {
+    transform: scale(1.05);
+}
+.soins-photo-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 60px 20px 20px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5em;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+}
+
+/* Routine */
+.soins h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.soins-block-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.soins-block-head h4 {
+    margin-bottom: 0;
+}
+.soins-progress {
+    position: relative;
+    width: 200px;
+    height: 26px;
+    border-radius: 13px;
+    background: #1b1b1b;
+    overflow: hidden;
+}
+.soins-progress-bar {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0;
+    background: #904d30;
+    transition: width 0.4s ease;
+}
+.soins-progress-label {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    line-height: 26px;
+    color: #fff;
+}
+.soins-step {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background: #1b1b1b;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.soins-step:hover {
+    transform: translateY(-3px);
+    border-color: rgba(144, 77, 48, 0.6);
+}
+.soins-step-num {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.05);
+}
+.soins-step-icon {
+    flex: 0 0 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #904d30;
+    background: rgba(144, 77, 48, 0.12);
+    transition: all 0.3s ease;
+}
+.soins-step-body strong {
+    display: block;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.soins-step-body span {
+    display: block;
+    font-size: 14px;
+    line-height: 1.6em;
+    color: #999;
+}
+.soins-step-check {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: transparent;
+    transition: all 0.3s ease;
+}
+.soins-step.is-done {
+    border-color: #904d30;
+}
+.soins-step.is-done .soins-step-icon {
+    color: #fff;
+    background: #904d30;
+}
+.soins-step.is-done .soins-step-check {
+    color: #fff;
+    background: #904d30;
+    border-color: #904d30;
+}
+.soins-step.is-done .soins-step-body strong {
+    text-decoration: line-through;
+    text-decoration-color: #904d30;
+}
+
+/* À éviter */
+.soins-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.soins-chip {
+    font-size: 14px;
+    color: #ddd;
+    background: #1b1b1b;
+    border-radius: 20px;
+    padding: 6px 16px;
+    transition: background 0.3s ease;
+}
+.soins-chip i {
+    color: #904d30;
+    margin-right: 6px;
+}
+.soins-chip:hover {
+    background: #262626;
+}
+
+/* Normal / à surveiller */
+.soins-card {
+    height: 100%;
+    border-radius: 6px;
+    padding: 20px 22px;
+    background: #1b1b1b;
+    border-left: 3px solid;
+}
+.soins-card h5 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+.soins-card ul {
+    margin: 0;
+}
+.soins-card li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.6em;
+}
+.soins-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.5;
+}
+.soins-card--ok {
+    border-color: #6b8f5e;
+}
+.soins-card--ok h5 i {
+    color: #6b8f5e;
+}
+.soins-card--alert {
+    border-color: #904d30;
+}
+.soins-card--alert h5 i {
+    color: #904d30;
+}
+
+.soins-bonus {
+    margin-top: 10px;
+    padding: 14px 18px;
+    border: 1px dashed rgba(144, 77, 48, 0.5);
+    border-radius: 6px;
+    color: #ccc;
+}
+.soins-bonus i {
+    color: #904d30;
+    margin-right: 8px;
+}
+
+/* Animation des onglets */
+.soins .tab-pane.fade {
+    transition: opacity 0.4s ease;
+}
+
+@media screen and (max-width: 991px) {
+    .soins-photo {
+        min-height: 300px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .soins-tab {
+        width: 100%;
+    }
+    .soins-progress {
+        width: 100%;
+    }
+}

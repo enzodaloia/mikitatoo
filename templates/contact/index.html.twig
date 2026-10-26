@@ -4,7 +4,7 @@
 
 {% block body %}
 <!-- Header Banner -->
-<section class="banner-header full-height section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="img/slider/10.jpg">
+<section class="banner-header full-height section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="{{ asset('img/site/accueil-fond.jpg') }}">
     <div class="container">
         <div class="row">
             <div class="col-md-7 text-left caption mt-90">
@@ -74,7 +74,7 @@
                             <select name="interlocuteur" required>
                                 <option style="display:none;" value="">Choisir un interlocuteur *</option>
                                 <option value="Miki" {{ app.request.get('interlocuteur') == 'Miki' ? 'selected' : '' }}>Miki - Artiste Tatoueuse</option>
-                                <option value="Elsa" {{ app.request.get('interlocuteur') == 'Elsa' ? 'selected' : '' }}>Elsa - Artiste & Praticienne beauté</option>
+                                <option value="Elsa" {{ app.request.get('interlocuteur') == 'Elsa' ? 'selected' : '' }}>Elsa - Esthéticienne</option>
                                 <option value="Jason" {{ app.request.get('interlocuteur') == 'Jason' ? 'selected' : '' }}>Jason - Artiste Tatoueur</option>
                             </select>
                         </div>

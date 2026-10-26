@@ -3,11 +3,11 @@
 {% block title %}Ginko art tattoo{% endblock %}
 
 {% block body %}
-<section class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="2" data-background="img/slider/1.jpg">
+<section class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="2" data-background="{{ asset('img/site/elsa-fond.jpg') }}">
     <div class="container">
         <div class="row">
             <div class="col-md-6 caption mt-90">
-                <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="index.html">Accueil</a> / Equipe</h5>
+                <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="{{ path('app_index') }}">Accueil</a> / Équipe</h5>
                 <h1 class="animate-box" data-animate-effect="fadeInUp">Elsa Combes</h1>
                 {# <hr class="animate-box" data-animate-effect="fadeInUp"> #}
                 {# <p class="animate-box" data-animate-effect="fadeInUp">Lorem arena nuam enim mi obortis esen the uctus accumsan golden isuame amen auctor orci done vitae vehicula risus duise nun sapien asuam.</p> #}
@@ -23,15 +23,14 @@
         <div class="row">
             <div class="col-md-12 mb-60">
                 <div class="item right">
-                    <figure><img src="{{asset('img/elsa.jpg')}}" alt="" class="img-fluid"></figure>
+                    <figure><img src="{{ asset('img/site/elsa-massage.jpg') }}" alt="Elsa" class="img-fluid"></figure>
                     <div class="caption padding-left">
                         <div class="name">Elsa Combes</div>
-                        <div class="subname">Artiste & Praticienne Beauté</div>
+                        <div class="subname">Esthéticienne</div>
                         <p>Passionnée par la beauté, le bien-être et l’expression de soi depuis plus de 10 ans, j’aime avant tout prendre soin des autres.
                         Esthéticienne de formation, j’ai choisi de réunir dans mon univers différentes prestations autour de la beauté, du bien-être et de la mise en valeur de soi.</p>
-                        <p class="mb-0"><span class="white">Email:</span> <a href="mailto:colle_jason@outlook.com">colle_jason@outlook.com</a></p>
-                        <p><span class="white">Phone:</span> <a href="tel:0672964907">06.72.96.49.07</a></p>
-                        <div class="social-list"> <a href="https://www.instagram.com/jason.tx3/"><i class="ti-instagram"></i></a> <a href="#"><i class="fa-brands fa-tiktok"></i></a> </div>
+                        <p class="mb-0"><span class="white">Email :</span> <a href="mailto:elsa.combes980@gmail.com">elsa.combes980@gmail.com</a></p>
+                        <p><span class="white">Téléphone :</span> <a href="tel:0607505048">06.07.50.50.48</a></p>
                     </div>
                 </div>
             </div>
@@ -101,73 +100,39 @@
     </div>
 </section>
 <!-- Latest Work Gallery -->
+{# TODO : remplacer par les vraies photos d'Elsa pour chaque prestation #}
+{% set realisations = {
+    'Maquillage permanent': ['img/services/1.jpg', 'img/services/2.jpg', 'img/services/3.jpg', 'img/services/4.jpg'],
+    'Piercing': ['img/services/1.jpg', 'img/services/2.jpg', 'img/services/3.jpg', 'img/services/4.jpg'],
+    'Massages bien-être': ['img/services/1.jpg', 'img/services/2.jpg', 'img/services/3.jpg', 'img/services/4.jpg'],
+} %}
 <section class="gallery section-padding bg-blck">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <h2>Mes dernières réalisations</h2>
             </div>
+        </div>
+        {% for prestation, images in realisations %}
+        <div class="row{{ not loop.last ? ' mb-60' }}">
+            <div class="col-md-12">
+                <h4>{{ prestation }}</h4>
+            </div>
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme">
+                    {% for image in images %}
                     <div class="gallery-item">
-                        <a href="img/services/1.jpg" title="" class="img-zoom">
+                        <a href="{{ asset(image) }}" title="{{ prestation }}" class="img-zoom">
                             <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/1.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                                <div class="gallery-img"> <img src="{{ asset(image) }}" class="img-fluid mx-auto d-block" alt="{{ prestation }}"> </div>
                             </div>
                         </a>
                     </div>
-                    <div class="gallery-item">
-                        <a href="img/services/2.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/2.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/3.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/3.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/4.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/4.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/1.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/1.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/2.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/2.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/3.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/3.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/4.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/4.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
 </section>
 <!-- Promo video - Testiominals -->

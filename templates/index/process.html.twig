@@ -1,519 +1,203 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ginko art tattoo{% endblock %}
+{% block title %}Soins & cicatrisation | Ginko Body Art{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/soins.css') }}">
+{% endblock %}
+
+{% set soins = [
+    {
+        id: 'tatouage',
+        label: 'Tatouage',
+        icon: 'fa-solid fa-pen-nib',
+        image: 'img/site/soins-tatouage.jpg',
+        intro: 'Quelques gestes simples pour une cicatrisation au top et des couleurs qui durent.',
+        routine: [
+            { icon: 'fa-solid fa-bandage', title: 'Le pansement', text: 'Gardez la seconde peau ou le film jusqu’au moment indiqué par votre tatoueur.' },
+            { icon: 'fa-solid fa-pump-soap', title: 'Nettoyage', text: 'Mains propres, savon doux au pH neutre, eau tiède. On mousse doucement, sans frotter.' },
+            { icon: 'fa-solid fa-hand-holding-droplet', title: 'Séchage', text: 'Tamponnez avec une serviette ou une compresse propre.' },
+            { icon: 'fa-solid fa-jar', title: 'Hydratation', text: 'Une très fine couche de crème adaptée, quand votre tatoueur le recommande.' },
+        ],
+        eviter: ['Gratter ou arracher les croûtes', 'Bain, piscine, mer, jacuzzi', 'Le soleil', 'Trop de crème'],
+        normal: ['Légère rougeur ou sensibilité', 'Petites croûtes et peau qui pèle'],
+        consulter: ['Douleur forte ou qui augmente', 'Rougeur qui s’étend, gros gonflement', 'Écoulement inhabituel ou fièvre'],
+        bonus: 'Une fois cicatrisé : hydratez régulièrement et protégez votre tatouage du soleil pour garder des couleurs éclatantes.',
+    },
+    {
+        id: 'piercing',
+        label: 'Piercing',
+        icon: 'fa-solid fa-ring',
+        image: 'img/site/soins-piercing.jpg',
+        intro: 'Un piercing bien soigné, c’est une cicatrisation sereine et sans complication.',
+        routine: [
+            { icon: 'fa-solid fa-hands-bubbles', title: 'Mains propres', text: 'Lavez-vous les mains avant de toucher votre piercing.' },
+            { icon: 'fa-solid fa-pump-soap', title: 'Nettoyage', text: 'Savon doux au pH neutre, puis rinçage au sérum physiologique.' },
+            { icon: 'fa-solid fa-hand-holding-droplet', title: 'Séchage', text: 'Tamponnez avec une compresse stérile, sans frotter.' },
+            { icon: 'fa-solid fa-hand', title: 'On n’y touche pas', text: 'Ne tournez pas le bijou et gardez-le en place jusqu’à la fin de la cicatrisation.' },
+        ],
+        eviter: ['Dormir dessus', 'Alcool et produits irritants', 'Bain, piscine, baignade', 'Retirer le bijou soi-même'],
+        normal: ['Rougeur, sensibilité ou léger gonflement les premiers jours', 'Sécrétion claire et petite croûte (lymphe)'],
+        consulter: ['Douleur forte ou qui augmente', 'Gonflement marqué, rougeur qui s’étend', 'Écoulement inhabituel ou fièvre'],
+        bonus: 'En cas de suspicion d’infection, ne retirez pas le bijou sans avis médical.',
+    },
+    {
+        id: 'maquillage',
+        label: 'Maquillage permanent',
+        icon: 'fa-solid fa-wand-magic-sparkles',
+        image: 'img/site/soins-maquillage.jpg',
+        intro: 'Les bons réflexes pour préserver la tenue et la qualité de votre pigmentation.',
+        routine: [
+            { icon: 'fa-solid fa-hands-bubbles', title: 'Mains propres', text: 'Lavez-vous les mains avant tout contact avec la zone pigmentée.' },
+            { icon: 'fa-solid fa-jar', title: 'Le soin', text: 'Une fine couche de Cicaplast Baume B5+ une fois par jour, sur peau propre et sèche.' },
+            { icon: 'fa-solid fa-hourglass-half', title: 'Patience', text: 'Laissez les petites croûtes tomber d’elles-mêmes.' },
+        ],
+        eviter: ['Toucher, gratter, frotter', 'Gommage sur la zone', 'Piscine et bains', 'Maquillage et cosmétiques sur la zone'],
+        normal: ['Rougeur, sensibilité, tiraillement', 'Petites croûtes', 'Couleur plus foncée au début, qui s’adoucit ensuite'],
+        consulter: ['Une réaction qui vous inquiète ? Contactez Elsa', 'Demandez un avis médical si besoin'],
+        bonus: 'Ne surchargez pas la zone de crème : une fine couche suffit.',
+    },
+] %}
 
 {% block body %}
     <!-- Header Banner -->
-    <section class="banner-header full-height valign bg-img bg-fixed" data-overlay-dark="4" data-background="img/slider/7.jpg">
+    <section class="banner-header full-height valign bg-img bg-fixed" data-overlay-dark="4" data-background="{{ asset('img/site/soins-fond.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-left caption mt-90">
-                    <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="index.html">Home</a> / Aftercare</h5>
-                    <h1 class="animate-box" data-animate-effect="fadeInUp">Aftercare</h1>
+                    <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="{{ path('app_index') }}">Accueil</a> / Soins</h5>
+                    <h1 class="animate-box" data-animate-effect="fadeInUp">Soins</h1>
                     <hr class="animate-box" data-animate-effect="fadeInUp">
-                    <p class="animate-box" data-animate-effect="fadeInUp">We provide expert guidance and high-quality artistry. Tattoo viverra tristique usto vitae diam neque nivamus aestan the artine arinianu finibus viverra.</p>
+                    <p class="animate-box" data-animate-effect="fadeInUp">Tout ce qu’il faut savoir pour bien cicatriser, en quelques gestes simples.</p>
                 </div>
             </div>
         </div>
     </section>
     <!-- hr -->
     <div class="line-vr-section"></div>
-    <!-- Aftercare -->
-    <section class="section-padding">
+    <!-- Soins -->
+    <section class="soins section-padding">
         <div class="container">
-            <div class="about-info">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="about-info-img mb-30">
-                            <div class="img">
-                                <img src="img/aftercare.jpg"
-                                    class="img-fluid"
-                                    alt="Soins et cicatrisation après tatouage">
+            <div class="row mb-30">
+                <div class="col-md-12 section-head text-center">
+                    <div class="section-subtitle">Après votre séance</div>
+                    <div class="section-title white">Vos <span>soins</span></div>
+                    <p class="soins-hint">Choisissez votre prestation, puis cochez les étapes au fil de votre routine.</p>
+                </div>
+            </div>
+
+            <ul class="nav soins-tabs" role="tablist">
+                {% for soin in soins %}
+                    <li class="nav-item" role="presentation">
+                        <button class="soins-tab{{ loop.first ? ' active' }}" data-bs-toggle="pill" data-bs-target="#soin-{{ soin.id }}" type="button" role="tab" aria-controls="soin-{{ soin.id }}" aria-selected="{{ loop.first ? 'true' : 'false' }}">
+                            <i class="{{ soin.icon }}"></i> {{ soin.label }}
+                        </button>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="tab-content">
+                {% for soin in soins %}
+                    <div class="tab-pane fade{{ loop.first ? ' show active' }}" id="soin-{{ soin.id }}" role="tabpanel">
+                        <div class="row">
+                            <div class="col-lg-4 mb-30">
+                                <div class="soins-photo">
+                                    <img src="{{ asset(soin.image) }}" alt="Soins {{ soin.label|lower }}">
+                                    <div class="soins-photo-caption">{{ soin.intro }}</div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-8">
+                                <div class="soins-block-head">
+                                    <h4>Ma routine</h4>
+                                    <div class="soins-progress" data-progress>
+                                        <span class="soins-progress-bar"></span>
+                                        <span class="soins-progress-label">0 / {{ soin.routine|length }}</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    {% for etape in soin.routine %}
+                                        <div class="col-md-6 mb-20">
+                                            <button type="button" class="soins-step" data-step aria-pressed="false">
+                                                <span class="soins-step-num">{{ loop.index }}</span>
+                                                <span class="soins-step-icon"><i class="{{ etape.icon }}"></i></span>
+                                                <span class="soins-step-body">
+                                                    <strong>{{ etape.title }}</strong>
+                                                    <span>{{ etape.text }}</span>
+                                                </span>
+                                                <span class="soins-step-check"><i class="fa-solid fa-check"></i></span>
+                                            </button>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                                <h4 class="mt-30">À éviter</h4>
+                                <div class="soins-chips">
+                                    {% for item in soin.eviter %}
+                                        <span class="soins-chip"><i class="fa-solid fa-ban"></i> {{ item }}</span>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="row mt-30">
+                                    <div class="col-md-6 mb-20">
+                                        <div class="soins-card soins-card--ok">
+                                            <h5><i class="fa-solid fa-circle-check"></i> C’est normal</h5>
+                                            <ul>
+                                                {% for item in soin.normal %}<li>{{ item }}</li>{% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-20">
+                                        <div class="soins-card soins-card--alert">
+                                            <h5><i class="fa-solid fa-triangle-exclamation"></i> À surveiller</h5>
+                                            <ul>
+                                                {% for item in soin.consulter %}<li>{{ item }}</li>{% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="soins-bonus"><i class="fa-solid fa-lightbulb"></i> {{ soin.bonus }}</p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-8">
-                        <h2 class="section-title2">Soins après tatouage</h2>
-
-                        <p>
-                            Un tatouage a besoin de temps et de soins pour cicatriser correctement.
-                            Quelques gestes simples permettent de protéger votre peau, de favoriser
-                            une bonne cicatrisation et de préserver la qualité de votre tatouage
-                            dans le temps. Suivez en priorité les recommandations de votre tatoueur
-                            selon le type de pansement utilisé et votre tatouage.
-                        </p>
-
-                        <ul class="about-list list-unstyled mb-30">
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Le pansement :</strong> si une seconde peau ou un film
-                                        protecteur a été posé, ne le retirez pas avant le moment
-                                        indiqué par votre tatoueur. Une fois le pansement retiré,
-                                        procédez au premier nettoyage du tatouage.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Avant chaque soin :</strong> lavez soigneusement vos
-                                        mains à l’eau et au savon avant de toucher votre tatouage.
-                                        Évitez toute manipulation inutile pendant la cicatrisation.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Nettoyage :</strong> nettoyez délicatement le tatouage
-                                        avec un savon doux au pH neutre, sans parfum ni agents
-                                        irritants. Faites mousser doucement la zone avec les mains,
-                                        puis rincez à l’eau tiède. Ne frottez pas et n’utilisez pas
-                                        d’éponge ou de gant.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Séchage :</strong> séchez votre tatouage en tamponnant
-                                        délicatement avec une serviette propre ou une compresse
-                                        propre. Ne frottez jamais la zone tatouée.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Hydratation :</strong> lorsque votre tatoueur vous
-                                        le recommande, appliquez une très fine couche de crème
-                                        adaptée à la cicatrisation. Massez délicatement jusqu’à
-                                        pénétration, sans surcharger la peau. Une quantité excessive
-                                        de crème peut empêcher la peau de respirer correctement.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Ne pas gratter :</strong> des petites croûtes ou des
-                                        desquamations peuvent apparaître pendant la cicatrisation.
-                                        C’est normal. Ne les arrachez pas et ne grattez pas votre
-                                        tatouage afin de ne pas irriter la peau ou altérer la
-                                        pigmentation.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Eau et baignade :</strong> les douches sont autorisées,
-                                        mais évitez les bains, piscines, jacuzzi, mer et toute
-                                        immersion prolongée pendant la cicatrisation. Évitez également
-                                        de laisser le tatouage tremper longtemps sous l’eau.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Soleil :</strong> protégez votre tatouage du soleil
-                                        pendant toute la période de cicatrisation. Une fois le tatouage
-                                        complètement cicatrisé, utilisez une protection solaire adaptée
-                                        lors des expositions afin de préserver ses couleurs et sa
-                                        qualité dans le temps.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Après la cicatrisation :</strong> continuez à hydrater
-                                        régulièrement votre peau et protégez votre tatouage du soleil.
-                                        Une peau bien entretenue contribue à conserver l’aspect et
-                                        les couleurs de votre tatouage plus longtemps.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>En cas de doute :</strong> une légère rougeur,
-                                        sensibilité ou desquamation peuvent être normales pendant
-                                        la cicatrisation. En revanche, en cas de douleur importante
-                                        ou croissante, rougeur qui s’étend, gonflement important,
-                                        écoulement inhabituel ou fièvre, demandez rapidement un avis
-                                        médical.
-                                    </p>
-                                </div>
-                            </li>
-
-                        </ul>
-
-                        <p>
-                            Une question concernant votre cicatrisation ou l’entretien de votre
-                            tatouage ? N’hésitez pas à contacter l’équipe
-                            <strong>Ginko Body Art</strong> pour obtenir un conseil adapté.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 mt-90">
-                        <h2 class="section-title2">Soins après piercing</h2>
-
-                        <p>
-                            Les soins après un piercing sont essentiels pour favoriser une bonne
-                            cicatrisation et limiter les risques d'irritation ou de complication.
-                            Suivez attentivement ces recommandations pendant toute la période
-                            de cicatrisation.
-                        </p>
-
-                        <ul class="about-list list-unstyled mb-30">
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Avant chaque soin :</strong> lavez soigneusement vos
-                                        mains à l’eau et au savon avant de toucher votre piercing.
-                                        Évitez de le manipuler inutilement.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Nettoyage :</strong> nettoyez délicatement la zone
-                                        avec un savon doux au pH neutre, puis rincez au sérum
-                                        physiologique. Séchez en tamponnant délicatement avec une
-                                        compresse stérile, sans frotter.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Ne pas manipuler le bijou :</strong> ne tournez pas
-                                        et ne jouez pas avec votre bijou. Évitez toute manipulation
-                                        inutile pendant la cicatrisation.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Ne retirez pas le bijou :</strong> gardez votre bijou
-                                        en place pendant toute la période de cicatrisation, sauf
-                                        indication d’un professionnel de santé.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>À éviter :</strong> évitez de dormir directement
-                                        sur le piercing. N’utilisez pas d’alcool ou de produits
-                                        irritants et évitez les bains, piscines et baignades pendant
-                                        la période recommandée.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Réactions normales :</strong> une légère rougeur,
-                                        une sensibilité ou un gonflement modéré peuvent apparaître
-                                        les premiers jours. Une sécrétion claire ou blanchâtre
-                                        (lymphe), pouvant former une petite croûte, est également
-                                        normale. Ces réactions doivent progressivement diminuer.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>En cas de doute :</strong> consultez un médecin en
-                                        cas de douleur importante ou croissante, de gonflement marqué,
-                                        de rougeur qui s’étend, d’écoulement inhabituel ou de fièvre.
-                                        En cas de suspicion d’infection, ne retirez pas vous-même
-                                        le bijou sans avis médical.
-                                    </p>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="about-info-img pt-60">
-                            <div class="img">
-                                <img src="img/aftercare2.jpg"
-                                    class="img-fluid"
-                                    alt="Soins après piercing">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="about-info-img mb-30">
-                            <div class="img">
-                                <img src="img/aftercare.jpg" class="img-fluid" alt="Soins après maquillage permanent">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-8 mt-90">
-                        <h2 class="section-title2">Soins après maquillage permanent</h2>
-
-                        <p>
-                            Les soins après une prestation de maquillage permanent sont essentiels
-                            pour favoriser une bonne cicatrisation et préserver la qualité ainsi que
-                            la tenue de la pigmentation. Voici les recommandations à suivre pendant
-                            les premiers jours.
-                        </p>
-
-                        <ul class="about-list list-unstyled mb-30">
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Les premiers jours :</strong> lavez soigneusement vos
-                                        mains avant tout contact avec la zone pigmentée. Évitez de
-                                        toucher, gratter ou frotter la zone tatouée.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Les soins :</strong> appliquez une fine couche de
-                                        Cicaplast Baume B5+ une fois par jour, sur une peau propre
-                                        et sèche. Ne surchargez pas la zone de crème.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Ne pas gratter :</strong> ne retirez pas les petites
-                                        croûtes qui peuvent apparaître pendant la cicatrisation.
-                                        Laissez-les tomber naturellement.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>À éviter :</strong> pas de gommage sur la zone,
-                                        et évitez la piscine, les bains ainsi que toute immersion
-                                        prolongée dans l’eau pendant la cicatrisation.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Produits cosmétiques :</strong> évitez d'appliquer
-                                        des produits cosmétiques ou irritants directement sur la zone
-                                        pendant la période recommandée.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Réactions normales :</strong> une légère rougeur,
-                                        une sensibilité, un tiraillement ou la formation de petites
-                                        croûtes peuvent apparaître pendant la cicatrisation. La
-                                        couleur peut également sembler plus foncée au début avant
-                                        de s’adoucir progressivement.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="about-list-icon">
-                                    <span class="ti-check"></span>
-                                </div>
-                                <div class="about-list-text">
-                                    <p>
-                                        <strong>Important :</strong> laissez les petites croûtes
-                                        tomber naturellement. Ne les arrachez pas afin de préserver
-                                        la pigmentation et favoriser une bonne cicatrisation.
-                                    </p>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
-    <!-- Promo video - Testiominals -->
-    {# <section class="testimonials video-wrapper video">
-        <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg" data-overlay-dark="3">
-            <div class="container">
-                <div class="row">
-                    <!-- Promo video -->
-                    <div class="col-md-7 mb-30">
-                        <div class="vid-area valign">
-                            <a class="vid" href="https://youtu.be/UCRNVgJJ97w"> <span class="icon"> <i class="ti-control-play"></i> </span> </a>
-                            <div class="cont">
-                                <h5>Promo Video</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testiominals -->
-                    <div class="col-md-5 animate-box" data-animate-effect="fadeInUp">
-                        <div class="testimonials-box">
-                            <div class="owl-carousel owl-theme">
-                                <div class="item"> <span class="quote"><img src="img/quot.png" alt=""></span>
-                                    <p class="v-border">Tattoo viverra tristique duis vitae dias the nesueten niva aestan ateuene artines duruna setlie suscena fermen uisque sed tellus man lorem nullaman the rana tortor in the felis fermen.</p>
-                                    <div class="info">
-                                        <div class="author-img"> <img src="img/team/1.jpg" alt=""> </div>
-                                        <div class="cont">
-                                            <h6>Jason Brown</h6> <span>Customer Review</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item"> <span class="quote">
-                                        <img src="img/quot.png" alt="">
-                                    </span>
-                                    <p class="v-border">Tattoo viverra tristique duis vitae dias the nesueten niva aestan ateuene artines duruna setlie suscena fermen uisque sed tellus man lorem nullaman the rana tortor in the felis fermen.</p>
-                                    <div class="info">
-                                        <div class="author-img"> <img src="img/team/2.jpg" alt=""> </div>
-                                        <div class="cont">
-                                            <h6>Emily White</h6> <span>Customer Review</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Contact CTA -->
+    <section class="soins-cta section-padding bg-blck">
+        <div class="container text-center">
+            <div class="section-title white">Une <span>question</span> ?</div>
+            <p>Un doute sur votre cicatrisation ? Écrivez-nous, on vous répond avec plaisir.</p>
+            <a href="{{ path('app_contact') }}#contact" class="btn-curve btn-1 mt-10"><span>Nous contacter</span></a>
         </div>
-    </section> #}
-    <!-- Clients -->
-    {# <section class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                <div class="owl-carousel owl-theme">
-                    <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/1.png" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/2.png" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/3.png" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/4.png" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/5.png" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/6.png" alt=""></a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section> #}
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        // Cartes « routine » cochables, avec une barre de progression par onglet
+        document.querySelectorAll('.soins .tab-pane').forEach(function (pane) {
+            var steps = pane.querySelectorAll('[data-step]');
+            var bar = pane.querySelector('.soins-progress-bar');
+            var label = pane.querySelector('.soins-progress-label');
+
+            function refresh() {
+                var done = pane.querySelectorAll('[data-step].is-done').length;
+                bar.style.width = (done / steps.length * 100) + '%';
+                label.textContent = done === steps.length ? 'Bravo, tout est fait !' : done + ' / ' + steps.length;
+            }
+
+            steps.forEach(function (step) {
+                step.addEventListener('click', function () {
+                    var done = step.classList.toggle('is-done');
+                    step.setAttribute('aria-pressed', done);
+                    refresh();
+                });
+            });
+        });
+    </script>
 {% endblock %}

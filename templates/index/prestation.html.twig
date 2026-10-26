@@ -4,11 +4,11 @@
 
 {% block body %}
 <!-- Header Banner -->
-    <section class="banner-header full-height section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="img/slider/4.jpg">
+    <section class="banner-header full-height section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="{{ asset('img/site/prestations-fond.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 caption mt-90">
-                    <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="index.html">Home</a> / Prestation</h5>
+                    <h5 class="animate-box" data-animate-effect="fadeInUp"><a href="{{ path('app_index') }}">Accueil</a> / Prestations</h5>
                     <h1 class="animate-box" data-animate-effect="fadeInUp">Nos prestations</h1>
                 </div>
             </div>
@@ -22,7 +22,7 @@
             <div class="row mb-30">
                 <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                     <div class="img left">
-                        <img src="{{asset('img/jason2.jpg')}}" alt="">
+                        <img src="{{ asset('img/site/jason-tatouage.jpg') }}" alt="Tatouage">
                     </div>
                 </div>
                 <div class="col-md-6 valign animate-box" data-animate-effect="fadeInRight">
@@ -47,7 +47,7 @@
                             <h5>Maquillage permanent</h5>
                             <p>Le maquillage permanent permet de mettre naturellement en valeur les traits du visage et de simplifier le quotidien.
                                 Sourcils, lèvres… chaque prestation est pensée en fonction de votre visage, de votre carnation et de votre style.
-                            </p> <a href="img/services/maquillage.pdf" class="btn-curve btn-1 mt-10"><span>Nos tarifs</span></a>
+                            </p> <a href="{{ asset('img/services/maquillage.pdf') }}" target="_blank" class="btn-curve btn-1 mt-10"><span>Nos tarifs</span></a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                             <p>Le piercing est une façon d’exprimer votre personnalité, votre style et vos envies.
                                 Chez Ginko Body Art, nous vous accompagnons dans le choix du piercing et du bijou afin de trouver une réalisation adaptée à votre morphologie et à votre projet.
                                 Chaque piercing est réalisé avec soin, dans le respect des règles d’hygiène et avec du matériel adapté. De la pose aux conseils de cicatrisation, nous vous accompagnons à chaque étape pour une expérience sereine, personnalisée et en toute confiance.
-                            </p> <a href="img/services/piercing.pdf" class="btn-curve btn-1 mt-10"><span>Nos tarifs</span></a>
+                            </p> <a href="{{ asset('img/services/piercing.pdf') }}" target="_blank" class="btn-curve btn-1 mt-10"><span>Nos tarifs</span></a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                                 Suédois, lomi lomi, balinais, californien, deep tissue, réflexologie plantaire, ayurvédique ou sur-mesure : choisissez l’approche qui vous correspond.
                                 Les techniques et la pression sont adaptées à vos besoins et à vos préférences.
                                 Un moment pour relâcher les tensions, ralentir et prendre soin de vous, dans une ambiance douce, chaleureuse et apaisante.
-                            </p> <a href="img/services/massage.pdf" class="btn-curve btn-1 mt-10"><span>Nos tarifs</span></a>
+                            </p> <a href="{{ asset('img/services/massage.pdf') }}" target="_blank" class="btn-curve btn-1 mt-10"><span>Nos tarifs</span></a>
                         </div>
                     </div>
                 </div>
@@ -102,6 +102,9 @@
             </div>
         </div>
     </section>
+    <!-- hr -->
+    <div class="line-vr-section"></div>
+    {% include 'index/_process.html.twig' %}
     <!-- Promo video - Testiominals -->
     {# <section class="testimonials video-wrapper video">
         <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg" data-overlay-dark="3">
