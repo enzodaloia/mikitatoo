@@ -52,62 +52,15 @@
             </div>
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme">
+                    {% for image in ['jason-travail-1.jpg', 'jason-travail-2.jpg', 'jason-travail-3.jpg', 'jason-travail-4.jpg'] %}
                     <div class="gallery-item">
-                        <a href="img/services/1.jpg" title="" class="img-zoom">
+                        <a href="{{ asset('img/site/' ~ image) }}" title="" class="img-zoom">
                             <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/1.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                                <div class="gallery-img"> <img src="{{ asset('img/site/' ~ image) }}" class="img-fluid mx-auto d-block" alt="Tatouage réalisé par Jason"> </div>
                             </div>
                         </a>
                     </div>
-                    <div class="gallery-item">
-                        <a href="img/services/2.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/2.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/3.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/3.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/4.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/4.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/1.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/1.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/2.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/2.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/3.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/3.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="img/services/4.jpg" title="" class="img-zoom">
-                            <div class="gallery-box">
-                                <div class="gallery-img"> <img src="img/services/4.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            </div>
-                        </a>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
