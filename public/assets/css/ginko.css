@@ -1,15 +1,20 @@
 /* ======= Ajustements Ginko Body Art ======= */
 
 /* Images de fond responsives
-   - Sur écrans tactiles et tablettes, on désactive l'effet « fixed » :
-     iOS/Safari ne le gère pas et agrandit l'image à la hauteur de toute la page.
+   - L'effet « fixed » est désactivé partout : il dimensionne l'image sur tout l'écran
+     au lieu du bandeau (photos très zoomées), et iOS/Safari l'agrandit à toute la page.
    - Sur tablette et téléphone, les bandeaux plein écran sont moins hauts pour
      limiter le recadrage des photos en paysage.
    - Le point de cadrage peut être réglé par page avec la variable --bg-pos-mobile
      (ex. style="--bg-pos-mobile: 70% center"). */
-@media (hover: none), (pointer: coarse), (max-width: 1199px) {
-    .bg-fixed {
-        background-attachment: scroll !important;
+.bg-fixed {
+    background-attachment: scroll !important;
+}
+/* Sur ordinateur, les bandeaux suivent le format des photos (16:9) sans dépasser
+   la hauteur de l'écran : on voit la photo entière au lieu d'une fine bande. */
+@media screen and (min-width: 992px) {
+    .banner-header {
+        min-height: min(56.25vw, 100vh);
     }
 }
 @media screen and (max-width: 991px) {
@@ -18,6 +23,25 @@
     }
     .banner-header.full-height {
         min-height: 70vh;
+    }
+    /* Les titres ne doivent jamais être coupés au milieu d'un mot */
+    .banner-header h1,
+    .banner-header h2 {
+        font-size: 44px;
+        overflow-wrap: normal;
+        word-wrap: normal;
+    }
+}
+/* Tablette : le menu tient sur une ligne sans que les liens se touchent */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar .logo-img {
+        width: 170px !important;
+    }
+    .navbar .navbar-nav .nav-link {
+        font-size: 13px;
+        letter-spacing: 1px;
+        padding-left: 8px;
+        padding-right: 8px;
     }
 }
 @media screen and (max-width: 575px) {

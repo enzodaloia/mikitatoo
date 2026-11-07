@@ -5,6 +5,10 @@ framework:
     # Note that the session will be started ONLY if you read or write from it.
     session: true
 
+    # Version des fichiers (?v=date de modification) pour éviter les vieilles images en cache
+    assets:
+        version_strategy: App\Asset\FileMtimeVersionStrategy
+
     #esi: true
     #fragments: true
 
