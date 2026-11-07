@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ginko art tattoo{% endblock %}
+{% block title %}Ginko Body Art - Bientôt en ligne{% endblock %}
 
 {% block body %}
     <div class="comming section-padding">
@@ -8,11 +8,11 @@
 			<div class="container">
 				<div class="row text-center mb-20">
 					<div class="col-md-12">
-						<img src="{{ asset('img/logo-light.png') }}" style="width: 200px;" class="logo-img" alt="">
+						<img src="{{ asset('img/logo-ginko-body-art.png') }}" style="width: 260px; max-width: 70vw;" class="logo-img" alt="Ginko Body Art">
 					</div>
 					<div class="col-md-12">
-						<h1>On arrive bientôt !</h1>
-						<p>Notre nouveau site est en construction !</p>
+						<h1 id="coming-title">On arrive bientôt !</h1>
+						<p id="coming-text">Inauguration le 27 novembre à 18h. Notre nouveau site est en construction !</p>
 					</div>
 				</div>
 				<div class="row text-center">
@@ -75,41 +75,35 @@
 		</div>
 	</div>
 
-	<script src="js/jquery-3.6.3.min.js"></script>
-	<script src="js/jquery-migrate-3.0.0.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/validator.js"></script>
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 
-			const eventDate = new Date(2026, 3, 1, 0, 0, 0).getTime();
-			// Mois = 11 car janvier = 0
+			// Inauguration : 27 novembre 2026 à 18h, heure de Paris (UTC+1 en novembre).
+			// Le fuseau est explicite pour que le timer soit juste quel que soit le pays du visiteur.
+			const eventDate = new Date("2026-11-27T18:00:00+01:00").getTime();
+			const pad = (n) => String(n).padStart(2, "0");
+			const set = (id, v) => { document.getElementById(id).textContent = v; };
+			let timer;
 
 			function countdown() {
-				const now = new Date().getTime();
-				const remTime = eventDate - now;
+				const remTime = eventDate - Date.now();
 
 				if (remTime <= 0) {
-					document.getElementById("days").textContent = 0;
-					document.getElementById("hours").textContent = 0;
-					document.getElementById("minutes").textContent = 0;
-					document.getElementById("seconds").textContent = 0;
+					["days", "hours", "minutes", "seconds"].forEach((id) => set(id, "00"));
+					set("coming-title", "C'est le jour J !");
+					set("coming-text", "Le studio Ginko Body Art ouvre ses portes, le site arrive très vite.");
+					clearInterval(timer);
 					return;
 				}
 
-				const days = Math.floor(remTime / (1000 * 60 * 60 * 24));
-				const hours = Math.floor((remTime / (1000 * 60 * 60)) % 24);
-				const minutes = Math.floor((remTime / (1000 * 60)) % 60);
-				const seconds = Math.floor((remTime / 1000) % 60);
-
-				document.getElementById("days").textContent = days;
-				document.getElementById("hours").textContent = hours;
-				document.getElementById("minutes").textContent = minutes;
-				document.getElementById("seconds").textContent = seconds;
+				set("days", pad(Math.floor(remTime / 86400000)));
+				set("hours", pad(Math.floor(remTime / 3600000) % 24));
+				set("minutes", pad(Math.floor(remTime / 60000) % 60));
+				set("seconds", pad(Math.floor(remTime / 1000) % 60));
 			}
 
 			countdown();
-			setInterval(countdown, 1000);
+			timer = setInterval(countdown, 1000);
 		});
 	</script>
 {% endblock %}
