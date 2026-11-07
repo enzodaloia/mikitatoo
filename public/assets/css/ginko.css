@@ -1,0 +1,52 @@
+/* ======= Ajustements Ginko Body Art ======= */
+
+/* Images de fond responsives
+   - Sur écrans tactiles et tablettes, on désactive l'effet « fixed » :
+     iOS/Safari ne le gère pas et agrandit l'image à la hauteur de toute la page.
+   - Sur tablette et téléphone, les bandeaux plein écran sont moins hauts pour
+     limiter le recadrage des photos en paysage.
+   - Le point de cadrage peut être réglé par page avec la variable --bg-pos-mobile
+     (ex. style="--bg-pos-mobile: 70% center"). */
+@media (hover: none), (pointer: coarse), (max-width: 1199px) {
+    .bg-fixed {
+        background-attachment: scroll !important;
+    }
+}
+@media screen and (max-width: 991px) {
+    .bg-img {
+        background-position: var(--bg-pos-mobile, center);
+    }
+    .banner-header.full-height {
+        min-height: 70vh;
+    }
+}
+@media screen and (max-width: 575px) {
+    .banner-header {
+        padding: 200px 0 70px;
+    }
+    .banner-header.full-height {
+        min-height: 60vh;
+    }
+    /* Le contenu centré en absolu passerait sous le logo : on le remet dans le flux */
+    .banner-header .v-middle {
+        position: relative;
+        top: auto;
+        transform: none;
+    }
+    /* Titres des bandeaux à une taille qui tient sur un téléphone */
+    .banner-header h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+    .banner-header h2 {
+        font-size: 40px;
+        line-height: 1.15em;
+        letter-spacing: 2px;
+    }
+    .banner-header h4 span {
+        letter-spacing: 3px;
+    }
+    .section-title {
+        font-size: 34px;
+    }
+}
