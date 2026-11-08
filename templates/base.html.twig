@@ -30,6 +30,8 @@
             <script src="{{ asset('assets/js/datepicker.js') }}"></script>
             <script src="{{ asset('assets/js/custom.js') }}"></script>
         {% endblock %} #}
+        {# Statistiques de visites : Umami auto-hébergé (stats.skalistudio.fr), sans cookie, compté seulement sur le domaine de production #}
+        <script defer src="https://stats.skalistudio.fr/script.js" data-website-id="73227c2f-764e-4b5f-8a33-d0a305bbc710" data-domains="ginkobodyart.fr,www.ginkobodyart.fr"></script>
     </head>
     <body>
         {% if app.user %}
